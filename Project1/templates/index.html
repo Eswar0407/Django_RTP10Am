@@ -1,0 +1,44 @@
+{% load static %}
+<html>
+  <head>
+      <script>
+          var button = document.getElementById("reg_button");
+      </script>
+      <script type="text/javascript" src="{% static 'js/async_request.js' %}"></script>
+  </head>
+   <body>
+       <table align="center" border="2">
+           <tr>
+               <th>
+                   <input type="text" placeholder="Name" name="t1">
+               </th>
+           </tr>
+           <tr>
+               <th>
+                   <input type="number" placeholder="Contact" name="t2">
+               </th>
+           </tr>
+           <tr>
+               <th>
+                   <input type="text" placeholder="Course" id="i3" name="t3" onblur="get_faculty_names()">
+               </th>
+           </tr>
+           <tr>
+               <th> Faculty :
+                   <select>
+                       <option value="select">Select</option>
+                       <option value="naveen">Naveen</option>
+                       <option value="eswar">Eswar</option>
+                       <option value="hima">Hima</option>
+                       <option value="bhaskar">Bhaskar</option>
+                   </select>
+               </th>
+           </tr>
+           <tr>
+               <th>
+                   <button type="submit" class="btn-primary" id="reg_button" disabled>Register</button>
+               </th>
+           </tr>
+       </table>
+   </body>
+</html>

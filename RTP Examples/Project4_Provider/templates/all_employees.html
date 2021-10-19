@@ -1,0 +1,21 @@
+
+
+<table align="center" border="2">
+    <tr>
+        <th colspan="3">
+            <h1>Employee Details</h1>
+        </th>
+    </tr>
+    <tr>
+        <th>Employee ID</th>
+        <th>Employee NAME</th>
+        <th>Employee SALARY</th>
+    </tr>
+     {% for employee in object_list %}
+         <tr>
+            <th>{{ employee.idno }}</th>
+            <th>{{ employee.name }}</th>
+            <th>{{ employee.salary }}</th>
+         </tr>
+     {% endfor %}
+</table>

@@ -1,0 +1,14 @@
+ {
+ 
+          "student":
+		  {
+		   "name":"Somavarapu Eswar",
+		   "father_name":"SVR Chari",
+		   "class":"10th",
+		   "marks":456,
+		   "contact":9542821302,
+		   "status":false
+		   
+		  }
+ 
+ }

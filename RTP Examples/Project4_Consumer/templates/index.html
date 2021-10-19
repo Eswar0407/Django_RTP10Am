@@ -1,0 +1,21 @@
+
+
+<html>
+   <body bgcolor="#ff4500">
+        <h1> Welcome to Consumer Application </h1>
+     <table align="center" border="2">
+         <tr>
+             <th>IDNO</th>
+             <th>Name</th>
+             <th>Salary</th>
+         </tr>
+         {% for employee in data %}
+             <tr>
+               <th>{{ employee.idno }}</th>
+               <th>{{ employee.name }}</th>
+               <th>{{ employee.salary }}</th>
+             </tr>
+         {% endfor %}
+     </table>
+   </body>
+</html>
