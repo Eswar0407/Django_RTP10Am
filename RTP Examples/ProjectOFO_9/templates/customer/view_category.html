@@ -1,0 +1,45 @@
+{% extends 'common.html' %}
+
+{% block menu %}
+    {% include 'menu/main_menu.html' %}
+{% endblock %}
+
+{% block body %}
+    <style>
+        #category_style{
+            font-family: Arial;
+            font-size: 25px;
+            {#border-radius: 10px;#}
+            border-color: black;
+            border-width: 2px;
+            border-style: solid;
+            color: red;
+        }
+    </style>
+    <table align="center" width="100%">
+        <tr>
+            <th id="category_style" colspan="3" style="text-align: center">
+                <h2>
+                    Categories
+                </h2>
+            </th>
+        </tr>
+    <table align="center" border="2" class="table">
+    <tr>
+    {% for category in categories %}
+        <th>
+           <a href="{% url 'view_category_food_item' %}">
+            <img src="{{ category.cat_image.url }}" width="80" height="80">
+            {{ category.cat_name }}
+           </a>
+        </th>
+        {% if forloop.counter|divisibleby:'3' %}
+            <tr>
+
+            </tr>
+        {% endif %}
+    {% endfor %}
+    </tr>
+    </table>
+    </table>
+{% endblock %}

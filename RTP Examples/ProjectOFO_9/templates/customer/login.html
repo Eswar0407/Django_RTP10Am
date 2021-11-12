@@ -1,0 +1,51 @@
+{% extends 'common.html' %}
+
+{% block menu %}
+    {% include 'menu/main_menu.html' %}
+{% endblock %}
+
+{% block body %}
+    <form action="{% url 'customer_login' %}" method="post">
+    {% csrf_token %}
+      <table align="center" border="2">
+          <tr>
+              <th colspan="2" style="text-align: center">
+                  <h1>
+                      Customer Login
+                  </h1>
+              </th>
+          </tr>
+       <tr>
+          <th colspan="2" style="text-align: center">
+              Email : <input type="email" placeholder="email" required name="email">
+          </th>
+       </tr>
+       <tr>
+           <th colspan="2" style="text-align: center">
+               Password : <input type="password" placeholder="Password" required name="password">
+           </th>
+       </tr>
+       <tr>
+           <th colspan="2" style="text-align: center">
+               <button type="submit" class="btn-info">
+                  Login
+               </button>
+           </th>
+       </tr>
+          <tr>
+              <th style="text-align: center">
+                  {{ error }}
+              </th>
+          </tr>
+      <tr>
+            <th>
+                <h1>
+                    <a href="{% url 'customer_register' %}">
+                       New Customer Registration
+                    </a>
+                </h1>
+            </th>
+      </tr>
+      </table>
+    </form>
+{% endblock %}

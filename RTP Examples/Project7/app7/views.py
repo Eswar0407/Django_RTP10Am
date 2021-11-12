@@ -8,6 +8,12 @@ from app7.serializers import EmployeeSerializer
 from rest_framework.viewsets import ViewSet
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.viewsets import ReadOnlyModelViewSet
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import AllowAny
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.permissions import IsAdminUser
+
 # Create your views here.
 #class ViewAllEmployees(APIView):
     #def get(self,request):
@@ -16,6 +22,11 @@ from rest_framework.viewsets import ReadOnlyModelViewSet
        #return Response(emp)
 
 class ViewAllEmployees(APIView):
+
+    #authentication_classes = [TokenAuthentication]
+
+    #permission_classes = [IsAuthenticated]
+
     #used to read all employees info
     def get(self,request):
         query_set = EmployeeModel.objects.all()

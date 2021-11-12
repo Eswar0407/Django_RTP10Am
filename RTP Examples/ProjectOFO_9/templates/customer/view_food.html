@@ -1,0 +1,66 @@
+{% extends 'common.html' %}
+
+{% block menu %}
+    {% include 'menu/main_menu.html' %}
+{% endblock %}
+
+{% block body %}
+    <style>
+        #category_style{
+            font-family: "Arial";
+            font-size: 25px;
+            {#border-radius: 10px;#}
+            border-color: black;
+            border-width: 2px;
+            border-style: solid;
+        }
+        .zoom:hover{
+            transform: scale(1.6,1.8);
+        }
+    </style>
+    <table align="center" width="100%">
+        <tr>
+            <th id="category_style" colspan="3" style="text-align: center">
+                <h2>
+                    Food Items
+                </h2>
+            </th>
+        </tr>
+    <table class="table" border="0">
+    <tr>
+    {% for food in foods %}
+        <th>
+            <table align="center" width="20%" border="0">
+                <tr>
+                    <th class="zoom" id="category_style">
+                        <img src="{{ food.item_photo.url }}"  width="100" height="100">
+                    </th>
+                </tr>
+                <tr>
+                    <th style="font-size: 15px;text-align: center">{{ food.item_name }}</th>
+                </tr>
+                <tr>
+                    <th style="font-size: 15px;text-align: center">{{ food.item_price }}</th>
+                </tr>
+                <tr>
+                    <th style="font-size: 15px;text-align: center">
+                        {{ food.item_status }}
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <button type="submit" class="btn-primary">Add To Cart</button>
+                    </th>
+                </tr>
+            </table>
+        </th>
+        {% if forloop.counter|divisibleby:'5' %}
+            <tr>
+
+            </tr>
+        {% endif %}
+    {% endfor %}
+    </tr>
+    </table>
+    </table>
+{% endblock %}

@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 
 from app7 import views
-
+from rest_framework_simplejwt import views as v
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -38,4 +38,6 @@ urlpatterns = [
     path('e_view_all/',views.EmployeeListAPIView.as_view()),
     path('e_retrive/',views.EmployeeRetrieveAPIView.as_view()),
 
+
+    path('get_jwt_token/',v.token_obtain_pair)
 ]

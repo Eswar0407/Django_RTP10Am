@@ -1,0 +1,64 @@
+{% extends 'common.html' %}
+
+{% block menu %}
+    {% include 'menu/main_menu.html' %}
+{% endblock %}
+
+{% block body %}
+   <form action="{% url 'customer_register' %}" method="post">
+   {% csrf_token %}
+     <table align="center" class="nav-tabs" border="0" width="40%">
+         <tr>
+             <th>
+                 <h1>
+                     <u>
+                         <b>
+                             Customer Registration
+                         </b>
+                     </u>
+                 </h1>
+             </th>
+         </tr>
+         <tr>
+             <th>
+                 Customer Name :
+                 <input type="text" name="Customer_name" required>
+             </th>
+         </tr>
+         <tr>
+             <th>
+                 Customer Contact :
+                 <input type="number" name="Customer_contact" required>
+             </th>
+         </tr>
+         <tr>
+             <th>
+                 Customer Email :
+                 <input type="email" name="Customer_email" required>
+             </th>
+         </tr>
+         <tr>
+             <th>
+                 Customer Password :
+                 <input type="password" name="Customer_password" required>
+             </th>
+         </tr>
+         <tr>
+             <th>
+                 Customer Address :
+                 <input type="text" name="Customer_address" required>
+             </th>
+         </tr>
+         <tr>
+             <th style="padding: 10px">
+                 <button type="submit" class="btn-primary">Submit</button>
+             </th>
+         </tr>
+         <tr>
+             <th style="text-align: center">
+                 {{ message }}
+             </th>
+         </tr>
+     </table>
+   </form>
+{% endblock%}
