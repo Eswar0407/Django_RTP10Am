@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render,redirect
 from customer.models import *
 #from customer.forms import CustomerForm
@@ -46,6 +47,13 @@ def customerRegister(request):
 def customerWelcome(request):
     return render(request, 'customer/welcomepage.html')
 
+def viewcategoryFooditem(request, cat_id):
+     fm = Food.objects.filter(cat_id=cat_id)
+     #of = Food.objects.order_by('item_name')
+     return render(request,"customer/catfood.html",{"cat_food":fm},
+                   #{"order":of}
+                   )
 
-def displayUser(request):
-        return render(request,"customer/displayuser.html")
+
+def contactUs(request):
+    return render(request,'contact_us.html')

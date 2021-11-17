@@ -13,7 +13,8 @@ urlpatterns = [
          path('customer_login/',views.customerLogin,name='customer_login'),
          path('customer_register/',views.customerRegister,name='customer_register'),
          path('welcome_page/',views.customerWelcome,name='customer_welcome'),
-         path('displayuser/',views.displayUser,name='display_user'),
+         path('view_category_food_item/<int:cat_id>/',views.viewcategoryFooditem,name='view_category_food_item'),
+         path('contact_us/',views.contactUs,name='contact_us'),
 ]
 
 if settings.DEBUG:

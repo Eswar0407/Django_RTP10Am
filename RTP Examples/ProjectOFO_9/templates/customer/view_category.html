@@ -28,7 +28,7 @@
     <tr>
     {% for category in categories %}
         <th>
-           <a href="{% url 'view_category_food_item' %}">
+           <a href="{% url 'view_category_food_item' category.cat_id %}">
             <img src="{{ category.cat_image.url }}" width="80" height="80">
             {{ category.cat_name }}
            </a>
